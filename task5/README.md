@@ -1,3 +1,14 @@
-# 自然语言处理任务完成情况
-* [Task1数据集探索](https://github.com/wsydl/NLP-Learn/tree/master/task1)
-* [Task2基本文本处理技能](https://github.com/wsydl/NLP-Learn/edit/master/task2)
+# Task5
+  1. 朴素贝叶斯
+ *   朴素贝叶斯的原理
+
+*   利用朴素贝叶斯模型进行文本分类
+
+2. SVM模型
+* SVM的原理
+*  利用SVM模型进行文本分类
+ 
+3. LDA主题模型
+ *   pLSA、共轭先验分布
+*   LDA
+*   使用LDA生成主题特征，在之前特征的基础上加入主题特征进行文本分类
