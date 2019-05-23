@@ -12,7 +12,6 @@ import pandas as pd
 from keras.preprocessing.text import Tokenizer
 
 
-
 def read_file(path):
     with open(path, 'r', encoding="UTF-8") as f:
         data = []
@@ -52,18 +51,19 @@ def fast_text_model(X_test):
     
 # 读文件
 data, labels = read_file('E:/task6/merge.txt')
+
+# 向量化文本
+tokenizer_train = get_tokenizer_data(data)
 # 划分数据集
-X_train, X_test, y_train, y_test = train_test_split(data, 
+X_train, X_test, y_train, y_test = train_test_split(tokenizer_train, 
                                                     labels,
                                                     test_size = 0.2,
                                                     random_state=33)
 # 在标签值前增加前缀
 label_train = [('__label__' + i).replace('\n', '') for i in y_train]
 
-# 向量化文本
-tokenizer_train = get_tokenizer_data(X_train)
 # 将label列与文本列合并为一行
-train = [i + ' ' + str(j).replace('[', '').replace(']', '').replace(',', '') for i, j in zip(label_train, tokenizer_train)]
+train = [i + ' ' + str(j).replace('[', '').replace(']', '').replace(',', '') for i, j in zip(label_train, X_train)]
     
 f = open('E:/task6/train.txt', 'w')
 for i in train:
@@ -72,14 +72,13 @@ for i in train:
 f.close()
 
 label_test = [('__label__' + i).replace('\n', '') for i in y_test]
-tokenizer_test = get_tokenizer_data(X_test)
-test = [i + ' ' + str(j).replace('[', '').replace(']', '').replace(',', '') for i, j in zip(label_test, tokenizer_test)]
+test = [i + ' ' + str(j).replace('[', '').replace(']', '').replace(',', '') for i, j in zip(label_test, X_test)]
 f = open('E:/task6/test.txt', 'w')
 for i in test:
     f.write(i)
     f.write('\n')
 f.close()
 
-X_test_tok = [str(j).replace('[', '').replace(']', '').replace(',', '') for j in tokenizer_test]
+X_test_tok = [str(j).replace('[', '').replace(']', '').replace(',', '') for j in X_test]
 
 label, prob, result = fast_text_model(X_test_tok)
