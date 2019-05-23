@@ -4,3 +4,4 @@
 * [Task3特征选择](https://github.com/wsydl/NLP-Learn/tree/master/task3)
 * [Task5文本分类](https://github.com/wsydl/NLP-Learn/tree/master/task5)
 * [Task6神经网络基础](https://github.com/wsydl/NLP-Learn/blob/master/task6)
+* [Task7 卷积神经网络](https://github.com/wsydl/NLP-Learn/tree/master/task7)
