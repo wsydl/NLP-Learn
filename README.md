@@ -5,4 +5,4 @@
 * [Task5文本分类](https://github.com/wsydl/NLP-Learn/tree/master/task5)
 * [Task6神经网络基础](https://github.com/wsydl/NLP-Learn/blob/master/task6)
 * [Task7 卷积神经网络](https://github.com/wsydl/NLP-Learn/tree/master/task7)
-* [Task Attention原理](https://github.com/wsydl/NLP-Learn/tree/master/task9)
+* [Task9 Attention原理](https://github.com/wsydl/NLP-Learn/tree/master/task9)
